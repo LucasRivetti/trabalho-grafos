@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Trabalho Final – Grafos: Análise Comparativa de Kruskal vs Prim
 
 Repositório do trabalho final da disciplina de Grafos (UFSJ – 1/2025)  
@@ -101,3 +102,6 @@ O estudo inclui:
 
 ---
   
+=======
+# trabalho-grafos
+>>>>>>> 6276561953e9612d61009c399498337b62bb9a37
