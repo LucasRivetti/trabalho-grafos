@@ -93,10 +93,19 @@ void kruskal(struct Grafo* grafo) {
         }
     }
 
-    printf("Arestas do MST:\n");
-    for (i = 0; i < e; ++i) {
-        printf("%d -- %d == %d\n", resultado[i].origem, resultado[i].destino, resultado[i].peso);
-    }
+    // Verificação de corretude
+if (e == grafo->V - 1) {
+    printf("A MST gerada está correta.\n");
+} else {
+    printf("Erro: MST incorreta! Arestas na MST: %d, esperado: %d\n", e, grafo->V - 1);
+}
+
+// Impressão das arestas da MST
+printf("Arestas do MST:\n");
+for (i = 0; i < e; ++i) {
+    printf("%d -- %d == %d\n", resultado[i].origem, resultado[i].destino, resultado[i].peso);
+}
+
     printf("Custo total do MST: %d\n", custoTotal);
 
     // meio encontrado para calcular o uso de memoria
