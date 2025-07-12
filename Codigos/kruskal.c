@@ -66,7 +66,7 @@ int compararArestas(const void* a, const void* b) {
 // Algoritmo de Kruskal 
 void kruskal(struct Grafo* grafo) {
     int V = grafo->V;
-    struct Aresta resultado[V]; 
+    struct Aresta* resultado = (struct Aresta*)malloc((V - 1) * sizeof(struct Aresta));
     int e = 0; 
     int i = 0; 
     int custoTotal = 0;
@@ -106,6 +106,7 @@ void kruskal(struct Grafo* grafo) {
     printf("Uso de memoria: %lld bytes\n", memoria);
 
     free(subgrafo);
+    free(resultado);
 }
 
 int main() {
