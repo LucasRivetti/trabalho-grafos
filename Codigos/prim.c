@@ -195,10 +195,8 @@ void prim(Grafo* g) {
 
     // Imprime a árvore geradora mínima
     int soma = 0;
-    printf("\nArestas da AGM:\n");
     for (int i = 1; i < g->numVertices; i++) {
         if (pai[i] != -1) {
-            printf("%d - %d (peso %d)\n", pai[i], i, chave[i]);
             soma += chave[i];
         }
     }
@@ -224,42 +222,44 @@ void prim(Grafo* g) {
     free(chave);
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     clock_t inicio, fim;
     double tempoGasto;
     int V, A;
 
-    printf("Informe o numero de vertices do grafo: ");
-    scanf("%d", &V);
+    if (argc != 2) {
+        printf("Uso: %s <caminho_para_grafo_real.txt>\n", argv[0]);
+        return 1;
+    }
 
-    printf("Informe o numero de arestas do grafo: ");
-    scanf("%d", &A);
+    FILE* arquivo = fopen(argv[1], "r");
+    if (!arquivo) {
+        printf("Erro ao abrir o arquivo: %s\n", argv[1]);
+        return 1;
+    }
+
+    fscanf(arquivo, "%d", &V);
+    fscanf(arquivo, "%d", &A);
 
     Grafo g;
     inicializaGrafo(&g, V);
 
-    printf("Informe as arestas no formato 'origem destino peso':\n");
+    printf("Lendo arestas do arquivo...\n");
     for (int i = 0; i < A; i++) {
         int u, v, peso;
-        printf("Aresta %d: ", i);
-        scanf("%d %d %d", &u, &v, &peso);
-        if (u < 0 || u >= V || v < 0 || v >= V) {
-            printf("Erro: vértices devem estar entre 0 e %d\n", V - 1);
-            return 1;
-        }
+        fscanf(arquivo, "%d %d %d", &u, &v, &peso);
         adicionaAresta(&g, u, v, peso);
     }
+    fclose(arquivo);
 
     inicio = clock();
     prim(&g);
     fim = clock();
 
-    tempoGasto = (double)(fim - inicio) / CLOCKS_PER_SEC;
-    printf("Tempo gasto: %.4f segundos\n", tempoGasto);
-    printf("Numero de operacoes extraiMin: %d\n", contadorExtraiMin);
-    printf("Numero de operacoes diminuiChave: %d\n", contadorDiminuiChave);
+    printf("Tempo gasto: %.6f segundos\n", (double)(fim - inicio) / CLOCKS_PER_SEC);
+    printf("Operacoes extraiMin: %d\n", contadorExtraiMin);
+    printf("Operacoes diminuiChave: %d\n", contadorDiminuiChave);
 
     liberaGrafo(&g);
-
     return 0;
 }
