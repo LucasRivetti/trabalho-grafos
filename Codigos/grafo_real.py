@@ -4,7 +4,7 @@ import random
 V = 50
 A = 75
 
-for j in range(0, 10):
+for j in range(1, 11):
     nomearquivo = f"grafo_real_{j}.txt"
     random.seed(42+j)
 

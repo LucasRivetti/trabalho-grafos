@@ -1,0 +1,496 @@
+--- Executando Kruskal para ../Dados/grafo_denso_1.txt ---
+A MST gerada está correta.
+Custo total do MST: 499
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.033593 segundos
+Operacoes find: 7663
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_1.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 499
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.047412 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2209
+
+--- Executando Kruskal para ../Dados/grafo_denso_2.txt ---
+A MST gerada está correta.
+Custo total do MST: 499
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.027415 segundos
+Operacoes find: 7872
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_2.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 499
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.043615 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2295
+
+--- Executando Kruskal para ../Dados/grafo_denso_3.txt ---
+A MST gerada está correta.
+Custo total do MST: 499
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.031283 segundos
+Operacoes find: 8163
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_3.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 499
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.042398 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2332
+
+--- Executando Kruskal para ../Dados/grafo_denso_4.txt ---
+A MST gerada está correta.
+Custo total do MST: 499
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.026913 segundos
+Operacoes find: 6098
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_4.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 499
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.034233 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2276
+
+--- Executando Kruskal para ../Dados/grafo_denso_5.txt ---
+A MST gerada está correta.
+Custo total do MST: 499
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.029689 segundos
+Operacoes find: 7768
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_5.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 499
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.041500 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2227
+
+--- Executando Kruskal para ../Dados/grafo_denso_6.txt ---
+A MST gerada está correta.
+Custo total do MST: 499
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.033201 segundos
+Operacoes find: 6784
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_6.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 499
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.038222 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2268
+
+--- Executando Kruskal para ../Dados/grafo_denso_7.txt ---
+A MST gerada está correta.
+Custo total do MST: 500
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.029034 segundos
+Operacoes find: 10512
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_7.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 500
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.036458 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2149
+
+--- Executando Kruskal para ../Dados/grafo_denso_8.txt ---
+A MST gerada está correta.
+Custo total do MST: 499
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.028883 segundos
+Operacoes find: 6948
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_8.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 499
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.035989 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2249
+
+--- Executando Kruskal para ../Dados/grafo_denso_9.txt ---
+A MST gerada está correta.
+Custo total do MST: 499
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.029244 segundos
+Operacoes find: 7632
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_9.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 499
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.044325 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2285
+
+--- Executando Kruskal para ../Dados/grafo_denso_10.txt ---
+A MST gerada está correta.
+Custo total do MST: 499
+Uso de memoria: 1204000 bytes
+Tempo gasto: 0.032561 segundos
+Operacoes find: 6924
+Operacoes union: 499
+
+--- Executando Prim para ../Dados/grafo_denso_10.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 499
+Uso de memoria: 3208000 bytes
+Tempo gasto: 0.051065 segundos
+Operacoes extraiMin: 500
+Operacoes diminuiChave: 2233
+
+--- Executando Kruskal para ../Dados/grafo_esparso_1.txt ---
+A MST gerada está correta.
+Custo total do MST: 35062
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000494 segundos
+Operacoes find: 7358
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_1.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 35062
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.001121 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1371
+
+--- Executando Kruskal para ../Dados/grafo_esparso_2.txt ---
+A MST gerada está correta.
+Custo total do MST: 35310
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000494 segundos
+Operacoes find: 7005
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_2.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 35310
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.000936 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1393
+
+--- Executando Kruskal para ../Dados/grafo_esparso_3.txt ---
+A MST gerada está correta.
+Custo total do MST: 35396
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000552 segundos
+Operacoes find: 7298
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_3.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 35396
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.000896 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1361
+
+--- Executando Kruskal para ../Dados/grafo_esparso_4.txt ---
+A MST gerada está correta.
+Custo total do MST: 34378
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000624 segundos
+Operacoes find: 7241
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_4.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 34378
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.001158 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1376
+
+--- Executando Kruskal para ../Dados/grafo_esparso_5.txt ---
+A MST gerada está correta.
+Custo total do MST: 36702
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000660 segundos
+Operacoes find: 6958
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_5.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 36702
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.001156 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1376
+
+--- Executando Kruskal para ../Dados/grafo_esparso_6.txt ---
+A MST gerada está correta.
+Custo total do MST: 35358
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000763 segundos
+Operacoes find: 7323
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_6.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 35358
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.001020 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1388
+
+--- Executando Kruskal para ../Dados/grafo_esparso_7.txt ---
+A MST gerada está correta.
+Custo total do MST: 35187
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000722 segundos
+Operacoes find: 7168
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_7.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 35187
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.001039 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1381
+
+--- Executando Kruskal para ../Dados/grafo_esparso_8.txt ---
+A MST gerada está correta.
+Custo total do MST: 38141
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000805 segundos
+Operacoes find: 7073
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_8.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 38141
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.001136 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1383
+
+--- Executando Kruskal para ../Dados/grafo_esparso_9.txt ---
+A MST gerada está correta.
+Custo total do MST: 35777
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000583 segundos
+Operacoes find: 7099
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_9.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 35777
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.001052 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1363
+
+--- Executando Kruskal para ../Dados/grafo_esparso_10.txt ---
+A MST gerada está correta.
+Custo total do MST: 36392
+Uso de memoria: 26000 bytes
+Tempo gasto: 0.000700 segundos
+Operacoes find: 7315
+Operacoes union: 999
+
+--- Executando Prim para ../Dados/grafo_esparso_10.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 36392
+Uso de memoria: 64000 bytes
+Tempo gasto: 0.001001 segundos
+Operacoes extraiMin: 1000
+Operacoes diminuiChave: 1386
+
+--- Executando Kruskal para ../Dados/grafo_real_1.txt ---
+A MST gerada está correta.
+Custo total do MST: 341
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000040 segundos
+Operacoes find: 319
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_1.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 341
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000035 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 71
+
+--- Executando Kruskal para ../Dados/grafo_real_2.txt ---
+A MST gerada está correta.
+Custo total do MST: 348
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000047 segundos
+Operacoes find: 304
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_2.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 348
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000038 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 69
+
+--- Executando Kruskal para ../Dados/grafo_real_3.txt ---
+A MST gerada está correta.
+Custo total do MST: 342
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000040 segundos
+Operacoes find: 326
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_3.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 342
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000031 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 66
+
+--- Executando Kruskal para ../Dados/grafo_real_4.txt ---
+A MST gerada está correta.
+Custo total do MST: 363
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000033 segundos
+Operacoes find: 320
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_4.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 363
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000035 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 68
+
+--- Executando Kruskal para ../Dados/grafo_real_5.txt ---
+A MST gerada está correta.
+Custo total do MST: 445
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000052 segundos
+Operacoes find: 278
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_5.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 445
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000040 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 68
+
+--- Executando Kruskal para ../Dados/grafo_real_6.txt ---
+A MST gerada está correta.
+Custo total do MST: 378
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000095 segundos
+Operacoes find: 309
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_6.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 378
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000032 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 67
+
+--- Executando Kruskal para ../Dados/grafo_real_7.txt ---
+A MST gerada está correta.
+Custo total do MST: 383
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000032 segundos
+Operacoes find: 348
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_7.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 383
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000035 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 66
+
+--- Executando Kruskal para ../Dados/grafo_real_8.txt ---
+A MST gerada está correta.
+Custo total do MST: 401
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000032 segundos
+Operacoes find: 316
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_8.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 401
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000038 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 68
+
+--- Executando Kruskal para ../Dados/grafo_real_9.txt ---
+A MST gerada está correta.
+Custo total do MST: 397
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000048 segundos
+Operacoes find: 309
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_9.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 397
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000036 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 71
+
+--- Executando Kruskal para ../Dados/grafo_real_10.txt ---
+A MST gerada está correta.
+Custo total do MST: 313
+Uso de memoria: 1300 bytes
+Tempo gasto: 0.000037 segundos
+Operacoes find: 299
+Operacoes union: 49
+
+--- Executando Prim para ../Dados/grafo_real_10.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 313
+Uso de memoria: 3200 bytes
+Tempo gasto: 0.000036 segundos
+Operacoes extraiMin: 50
+Operacoes diminuiChave: 65
+
+--- Executando Kruskal para ../Dados/grafo_grade.txt ---
+A MST gerada está correta.
+Custo total do MST: 899
+Uso de memoria: 28080 bytes
+Tempo gasto: 0.000416 segundos
+Operacoes find: 8524
+Operacoes union: 899
+
+--- Executando Prim para ../Dados/grafo_grade.txt ---
+Lendo arestas do arquivo...
+Peso total da AGM: 899
+Uso de memoria: 70080 bytes
+Tempo gasto: 0.000588 segundos
+Operacoes extraiMin: 900
+Operacoes diminuiChave: 899
+

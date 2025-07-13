@@ -4,7 +4,7 @@ V = 1000
 A = 1500
 
 
-for j in range(0, 10):
+for j in range(1, 11):
     nomearquivo = f"grafo_esparso_{j}.txt"
     random.seed(42+j)  # Para resultados reproduzíveis
 

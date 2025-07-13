@@ -68,6 +68,7 @@ void liberaGrafo(Grafo* g) {
             free(temp);
         }
     }
+    free(g->inicio);
 }
 
 // Contadores para as operacoes
@@ -89,9 +90,8 @@ MinHeap* criaMinHeap(int capacidade) {
 
 // Libera a memória alocada para o heap
 void liberaMinHeap(MinHeap* heap, int n) {
-    for (int i = 0; i < n; i++) {
-        if (heap->vetor[i]) free(heap->vetor[i]);
-    }
+    free(heap->vetor);
+    free(heap->pos); 
     free(heap);
 }
 
@@ -188,9 +188,11 @@ void prim(Grafo* g) {
                 pai[v] = u;
                 diminuiChave(heap, v, chave[v]);
                 contadorDiminuiChave++;  // Contabiliza diminuiChave
+                
             }
             atual = atual->prox;
         }
+        free(min);
     }
 
     // Imprime a árvore geradora mínima

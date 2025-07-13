@@ -3,7 +3,7 @@ import random
 V = 500
 A = 100000
 
-for j in range(0, 10):
+for j in range(1, 11):
     random.seed(42 + j)
     nomearquivo = f"grafo_denso_{j}.txt"
     with open(nomearquivo, "w") as f:
