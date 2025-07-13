@@ -2,51 +2,85 @@
 #include <stdlib.h>
 #include <time.h>
 
-//Estruturas para representar grafos, arestas e subgrafos
-struct Aresta {
+//nó de adjacência
+typedef struct Adj {
+    int vertice;
+    int peso;
+    struct Adj* prox;
+} Adj;
+
+//grafo com listas de adjacência
+typedef struct {
+    Adj** inicio;
+    int numVertices;
+} Grafo;
+
+//representa uma aresta
+typedef struct {
     int origem, destino, peso;
-};
+} Aresta;
 
-struct Grafo {
-    int V, A; 
-    struct Aresta* arestas;
-};
-
-struct SubGrafo {
+// Subgrafo para Union-Find
+typedef struct {
     int procura;
     int raiz;
-};
+} SubGrafo;
 
+// Contadores
+long long int operacao_find = 0;
+long long int operacao_union = 0;
 
-//esta função é responsável por criar o grafo
-struct Grafo* criarGrafo(int V, int A) {
-    struct Grafo* grafo = (struct Grafo*)malloc(sizeof(struct Grafo));
-    grafo->V = V;
-    grafo->A = A;
-    grafo->arestas = (struct Aresta*)malloc(A * sizeof(struct Aresta));
-    return grafo;
+// listas de adjacência
+Adj* novoAdj(int v, int peso) {
+    Adj* novo = malloc(sizeof(Adj));
+    novo->vertice = v;
+    novo->peso = peso;
+    novo->prox = NULL;
+    return novo;
 }
 
-// Contadores para as operacoes
-long long int operacao_find = 0; // Contador para find
-long long int operacao_union = 0; // Contador para union
+void inicializaGrafo(Grafo* g, int n) {
+    g->numVertices = n;
+    g->inicio = malloc(n * sizeof(Adj*));
+    for (int i = 0; i < n; i++)
+        g->inicio[i] = NULL;
+}
 
-//Esta função usa o algoritmo de compressao de caminhos para encontrar a raiz de um subgrafo
-int find(struct SubGrafo* subgrafo, int i) {
-    operacao_find++;
-    if (subgrafo[i].procura != i) {
-        subgrafo[i].procura = find(subgrafo, subgrafo[i].procura);
+void adicionaAresta(Grafo* g, int u, int v, int peso) {
+    Adj* novo = novoAdj(v, peso);
+    novo->prox = g->inicio[u];
+    g->inicio[u] = novo;
+
+    novo = novoAdj(u, peso); 
+    novo->prox = g->inicio[v];
+    g->inicio[v] = novo;
+}
+
+void liberaGrafo(Grafo* g) {
+    for (int i = 0; i < g->numVertices; i++) {
+        Adj* atual = g->inicio[i];
+        while (atual) {
+            Adj* temp = atual;
+            atual = atual->prox;
+            free(temp);
+        }
     }
+    free(g->inicio);
+}
+
+//Union-Find com contadores
+int find(SubGrafo* subgrafo, int i) {
+    operacao_find++;
+    if (subgrafo[i].procura != i)
+        subgrafo[i].procura = find(subgrafo, subgrafo[i].procura);
     return subgrafo[i].procura;
 }
 
-//Esta função tem como objetivo juntar dois subgrafos
-void unionSet(struct SubGrafo* subgrafo, int x, int y) {
+void unionSet(SubGrafo* subgrafo, int x, int y) {
     operacao_union++;
     int xraiz = find(subgrafo, x);
     int yraiz = find(subgrafo, y);
-    
-   if (xraiz != yraiz) {
+    if (xraiz != yraiz) {
         if (subgrafo[xraiz].raiz < subgrafo[yraiz].raiz) {
             subgrafo[xraiz].procura = yraiz;
         } else if (subgrafo[xraiz].raiz > subgrafo[yraiz].raiz) {
@@ -58,97 +92,98 @@ void unionSet(struct SubGrafo* subgrafo, int x, int y) {
     }
 }
 
-// Esta função compara duas arestas levando em conta o peso
+// Comparador para qsort
 int compararArestas(const void* a, const void* b) {
-    return ((struct Aresta*)a)->peso - ((struct Aresta*)b)->peso;
+    return ((Aresta*)a)->peso - ((Aresta*)b)->peso;
 }
 
-// Algoritmo de Kruskal 
-void kruskal(struct Grafo* grafo) {
-    int V = grafo->V;
-    struct Aresta* resultado = (struct Aresta*)malloc((V - 1) * sizeof(struct Aresta));
-    int e = 0; 
-    int i = 0; 
-    int custoTotal = 0;
+// Algoritmo de Kruskal
+void kruskal(Grafo* g, Aresta* arestas, int A) {
+    int V = g->numVertices;
+    Aresta* resultado = malloc((V - 1) * sizeof(Aresta));
+    int e = 0, i = 0, custoTotal = 0;
 
-    struct SubGrafo* subgrafo = (struct SubGrafo*)malloc(V * sizeof(struct SubGrafo));
-    for (int v = 0; v < V; ++v) {
+    SubGrafo* subgrafo = malloc(V * sizeof(SubGrafo));
+    for (int v = 0; v < V; v++) {
         subgrafo[v].procura = v;
         subgrafo[v].raiz = 0;
     }
 
-    // Utilizamos qsort para ordenar as arestas por peso
-    qsort(grafo->arestas, grafo->A, sizeof(grafo->arestas[0]),compararArestas);
+    qsort(arestas, A, sizeof(Aresta), compararArestas);
 
-    while (e < V - 1 && i < grafo->A) {
-        struct Aresta proximaAresta = grafo->arestas[i++];
-        
-        int x = find(subgrafo, proximaAresta.origem);
-        int y = find(subgrafo, proximaAresta.destino);
-
+    while (e < V - 1 && i < A) {
+        Aresta proxima = arestas[i++];
+        int x = find(subgrafo, proxima.origem);
+        int y = find(subgrafo, proxima.destino);
         if (x != y) {
-            resultado[e++] = proximaAresta;
+            resultado[e++] = proxima;
             unionSet(subgrafo, x, y);
-            custoTotal += proximaAresta.peso;
+            custoTotal += proxima.peso;
         }
     }
 
-    // Verificação de corretude
-if (e == grafo->V - 1) {
-    printf("A MST gerada está correta.\n");
-} else {
-    printf("Erro: MST incorreta! Arestas na MST: %d, esperado: %d\n", e, grafo->V - 1);
-}
+    if (e == V - 1) {
+        printf("A MST gerada está correta.\n");
+    } else {
+        printf("Erro: MST incorreta! Arestas na MST: %d, esperado: %d\n", e, V - 1);
+    }
 
-// Impressão das arestas da MST
-printf("Arestas do MST:\n");
-for (i = 0; i < e; ++i) {
-    printf("%d -- %d == %d\n", resultado[i].origem, resultado[i].destino, resultado[i].peso);
-}
+    printf("Arestas da MST:\n");
+    for (i = 0; i < e; i++) {
+        printf("%d -- %d == %d\n", resultado[i].origem, resultado[i].destino, resultado[i].peso);
+    }
 
     printf("Custo total do MST: %d\n", custoTotal);
 
-    // meio encontrado para calcular o uso de memoria
+    // Estimativa de memória
     long long int memoria = 0;
-    memoria += grafo->A * sizeof(struct Aresta); 
-    memoria += grafo->V * sizeof(struct SubGrafo);
+    memoria += V * sizeof(SubGrafo);
+    memoria += A * sizeof(Aresta);
     printf("Uso de memoria: %lld bytes\n", memoria);
 
     free(subgrafo);
     free(resultado);
 }
 
-int main() {
-    clock_t inicio, fim;
-    double tempoGasto;
-    int V, A;
-    operacao_find = 0;
-    operacao_union = 0; 
-    printf("Informe o numero de vertices do grafo: ");
-    scanf("%d", &V);
-    
-    printf("Informe o numero de arestas do grafo: ");
-    scanf("%d", &A);
-    
-    struct Grafo* grafo = criarGrafo(V, A);
-    
-    printf("Informe as arestas no formato 'origem destino peso':\n");
-    for (int i = 0; i < A; i++) {
-        printf("Aresta %d: ", i);
-        scanf("%d %d %d", &grafo->arestas[i].origem, &grafo->arestas[i].destino, &grafo->arestas[i].peso);
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        printf("Uso: %s <arquivo_grafo.txt>\n", argv[0]);
+        return 1;
     }
 
-    inicio = clock();
-    kruskal(grafo);
-    fim = clock();
+    FILE* arquivo = fopen(argv[1], "r");
+    if (!arquivo) {
+        printf("Erro ao abrir o arquivo: %s\n", argv[1]);
+        return 1;
+    }
 
-    tempoGasto = (double)(fim - inicio) / CLOCKS_PER_SEC;
-    printf("Tempo gasto: %.2f segundos\n", tempoGasto);
-    printf("O numero de peracoes find foi: %lld\n", operacao_find);
-    printf("O numero de operacoes union  foi: %lld\n", operacao_union);
+    int V, A;
+    fscanf(arquivo, "%d %d", &V, &A);
 
-    free(grafo->arestas);
-    free(grafo);
-    
+    Grafo g;
+    inicializaGrafo(&g, V);
+
+    Aresta* arestas = malloc(A * sizeof(Aresta));
+
+    for (int i = 0; i < A; i++) {
+        int u, v, peso;
+        fscanf(arquivo, "%d %d %d", &u, &v, &peso);
+        adicionaAresta(&g, u, v, peso);
+        arestas[i].origem = u;
+        arestas[i].destino = v;
+        arestas[i].peso = peso;
+    }
+    fclose(arquivo);
+
+    clock_t inicio = clock();
+    kruskal(&g, arestas, A);
+    clock_t fim = clock();
+
+    printf("Tempo gasto: %.6f segundos\n", (double)(fim - inicio) / CLOCKS_PER_SEC);
+    printf("Operacoes find: %lld\n", operacao_find);
+    printf("Operacoes union: %lld\n", operacao_union);
+
+    free(arestas);
+    liberaGrafo(&g);
     return 0;
 }
