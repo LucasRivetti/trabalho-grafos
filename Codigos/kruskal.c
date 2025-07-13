@@ -128,10 +128,10 @@ void kruskal(Grafo* g, Aresta* arestas, int A) {
         printf("Erro: MST incorreta! Arestas na MST: %d, esperado: %d\n", e, V - 1);
     }
 
-    printf("Arestas da MST:\n");
+    /*printf("Arestas da MST:\n");
     for (i = 0; i < e; i++) {
         printf("%d -- %d == %d\n", resultado[i].origem, resultado[i].destino, resultado[i].peso);
-    }
+    }*/
 
     printf("Custo total do MST: %d\n", custoTotal);
 
